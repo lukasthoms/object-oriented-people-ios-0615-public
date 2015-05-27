@@ -10,6 +10,12 @@
 
 @implementation Person
 
+- (instancetype) initWithName:(NSString *)name {
+    if ((self = [super init])) {
+        _name = name;
+    }
+    return self;
+}
 
 
 - (NSNumber *) grow
@@ -52,8 +58,10 @@
             self.height = [NSNumber numberWithFloat:newHeightFloat];
             return self.height;
         }
+    
         else return self.height;
     
+    }
 }
 
 - (void)addFriends:(NSArray *)friends
@@ -77,12 +85,13 @@
 - (BOOL)removeFriend:(Person *)friend
     {
     NSMutableArray *friends = self.friends;
+        BOOL remove = NO;
     for (Person *person in friends) {
         if ([person isEqual:friend]) {
             [self.friends removeObject:person];
-            return YES;
-        } else return NO;
-    }
+            remove = YES;
+        }
+    } return remove;
 }
 
 @end
