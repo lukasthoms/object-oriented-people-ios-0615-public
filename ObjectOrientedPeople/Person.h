@@ -16,6 +16,7 @@
 @property (nonatomic) BOOL isFemale;
 @property (strong, nonatomic) NSMutableArray *friends;
 
+- (instancetype) init;
 - (instancetype) initWithName:(NSString *)name;
 - (NSNumber *)grow;
 - (void)addFriends:(NSArray *)friends;

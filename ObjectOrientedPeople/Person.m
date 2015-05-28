@@ -10,10 +10,17 @@
 
 @implementation Person
 
+- (instancetype) init {
+    self = [super init];
+    _name = @"";
+    _height = @9;
+    return self;
+}
+
 - (instancetype) initWithName:(NSString *)name {
-    if ((self = [super init])) {
-        _name = name;
-    }
+    self = [super init];
+    _name = name;
+    _height = @9;
     return self;
 }
 
